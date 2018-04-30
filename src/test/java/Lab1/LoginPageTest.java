@@ -1,6 +1,7 @@
 package Lab1;
 
 import helper.LoginPageHelper;
+import org.junit.After;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
@@ -24,7 +25,18 @@ public class LoginPageTest {
     }
 
     @Test
-    public void userLogin() {
+    public void validUserLogin() {
         loginPageHelper.setValidValues();
+
+    }
+
+    @Test
+    public void invalidUserLogin() {
+        loginPageHelper.tryToLogin("inv", "inv");
+    }
+
+    @After
+    public void finishTests() {
+        webDriver.quit();
     }
 }

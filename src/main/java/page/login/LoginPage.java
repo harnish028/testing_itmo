@@ -1,9 +1,10 @@
-package page;
+package page.login;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import page.BasePage;
 
-public class LoginPage {
+public class LoginPage extends BasePage {
 
     @FindBy(name="login")
     private WebElement loginField;
@@ -11,12 +12,8 @@ public class LoginPage {
     @FindBy(name = "passwd")
     private WebElement passwordField;
 
-//    @FindBy(css = "input[type=\"submit\"]")
     @FindBy(className = "passport-Button")
     private WebElement submitLoginButton;
-
-    public LoginPage(){
-    }
 
     public LoginPage insertLogin(String loginValue) {
         loginField.sendKeys(loginValue);

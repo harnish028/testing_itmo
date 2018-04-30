@@ -4,7 +4,7 @@ public interface ValidValues {
 
     interface LoginPageValue{
 
-        String LOGIN = "testparshikov2";
-        String PASSWORD = "testparshikov2";
+        String LOGIN = "testparshikov3";
+        String PASSWORD = "testparshikov33";
     }
 }
