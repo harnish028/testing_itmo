@@ -9,19 +9,31 @@ import page.BasePage;
 public class MainPage extends BasePage {
     //TODO
 
-    @FindBy
+    @FindBy(className = "mail-ComposeButton")
     private WebElement writteMessageButton;
 
-    @FindBy(className = "mail-GhostButton")
+    @FindBy(className = "js-left-col-toolbar-compose")
     private WebElement settingButton;
 
-    @FindBy()
+    @FindBy(css = "a[href*='#setup/abook']")
     private WebElement settingContactsButton;
 
+    private WebDriver webDriver;
 
     public MainPage(WebDriver webDriver) {
-        PageFactory.initElements(webDriver, MainPage.class);
+        this.webDriver = webDriver;
+//        PageFactory.initElements(this.webDriver,  this);
+        PageFactory.initElements(this.webDriver, this);
     }
 
+    public void navigateToContactSettingPage(){
+        settingButton.click();
+        settingContactsButton.click();
+    }
 
+    public NewMessagePage navigateToNewMessagePage() {
+        writteMessageButton.click();
+
+        return new NewMessagePage(webDriver);
+    }
 }

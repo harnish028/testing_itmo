@@ -1,30 +1,34 @@
 package helper;
 
-import constanst.ValidValues;
+import constants.ValidValues;
 import helper.interfaces.ILoginPageHelper;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import page.login.LoginPage;
+import page.main.MainPage;
 
 public class LoginPageHelper implements ILoginPageHelper{
 
+    WebDriver webDriver;
     LoginPage loginPage;
 
     public LoginPageHelper(WebDriver driver) {
+        webDriver = driver;
         this.loginPage = PageFactory.initElements(driver, LoginPage.class);
     }
 
-    public LoginPage tryToLogin(String login, String password){
+    public MainPage tryToLogin(String login, String password){
         loginPage.insertLogin(login).insertPassword(password);
         loginPage.clickSubmitButton();
 
-        return loginPage;
+        return new MainPage(webDriver);
     }
 
-    public void setValidValues(){
+    public MainPage setValidValues(){
         loginPage.insertLogin(ValidValues.LoginPageValue.LOGIN)
                  .insertPassword(ValidValues.LoginPageValue.PASSWORD);
         loginPage.clickSubmitButton();
-        loginPage.waitOneSecond();
+//        return null;
+        return new MainPage(webDriver);
     }
 }

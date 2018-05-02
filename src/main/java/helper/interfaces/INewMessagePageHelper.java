@@ -1,5 +1,9 @@
 package helper.interfaces;
 
+import page.main.NewMessagePage;
+
 public interface INewMessagePageHelper {
-    //TODO
+
+    NewMessagePage sendValidMessage();
+    NewMessagePage tryToSendMessage(String addresse, String subject, String content);
 }

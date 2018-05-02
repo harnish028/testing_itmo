@@ -1,9 +1,9 @@
 package helper.interfaces;
 
-import page.login.LoginPage;
+import page.main.MainPage;
 
 public interface ILoginPageHelper {
 
-    LoginPage tryToLogin(String login, String password);
-    void setValidValues();
+    MainPage tryToLogin(String login, String password);
+    MainPage setValidValues();
 }
