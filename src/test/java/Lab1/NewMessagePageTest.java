@@ -2,6 +2,7 @@ package Lab1;
 
 import helper.LoginPageHelper;
 import helper.NewMessagePageHelper;
+import helper.interfaces.ILoginPageHelper;
 import helper.interfaces.INewMessagePageHelper;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -23,7 +24,7 @@ public class NewMessagePageTest {
 
     @Test
     public void sendValidMessage(){
-        LoginPageHelper loginPage = new LoginPageHelper(webDriver);
+        ILoginPageHelper loginPage = new LoginPageHelper(webDriver);
 
         MainPage mainPage = loginPage.setValidValues();
 

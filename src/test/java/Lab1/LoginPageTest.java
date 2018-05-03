@@ -1,11 +1,14 @@
 package Lab1;
 
 import helper.LoginPageHelper;
-import org.junit.After;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import page.main.MainPage;
+
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 public class LoginPageTest {
 
@@ -21,16 +24,17 @@ public class LoginPageTest {
 
     @Test
     public void validUserLogin() {
-        loginPageHelper.setValidValues();
+        MainPage mainPage = loginPageHelper.setValidValues();
+
+        assertNotNull("Login is valid", mainPage);
+        webDriver.close();
     }
 
     @Test
     public void invalidUserLogin() {
-        loginPageHelper.tryToLogin("inv", "inv");
-    }
+        MainPage mainPage = loginPageHelper.tryToLogin("inv", "inv");
 
-    @After
-    public void finishTests() {
-        webDriver.quit();
+        assertNull("Invalid login", mainPage);
+        webDriver.close();
     }
 }

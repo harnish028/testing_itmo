@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 import page.BasePage;
 
 public class NewMessagePage extends BasePage{
-    //TODO
+
     private WebDriver webDriver;
 
     @FindBy(className = "cke_contents_ltr")
@@ -50,5 +50,4 @@ public class NewMessagePage extends BasePage{
 
         return this;
     }
-
 }

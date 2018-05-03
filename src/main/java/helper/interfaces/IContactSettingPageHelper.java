@@ -1,7 +1,9 @@
 package helper.interfaces;
 
-public interface IContactSettingPageHelper {
-    //TODO
+import page.main.setting.ContactSettingPage;
 
-    public void createNewContactGroup();
+public interface IContactSettingPageHelper {
+
+    ContactSettingPage createValidNewContactGroup();
+    ContactSettingPage tryToCreateNewContactGroup(String groupName);
 }
