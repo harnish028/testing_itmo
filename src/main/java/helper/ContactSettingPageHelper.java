@@ -17,6 +17,8 @@ public class ContactSettingPageHelper implements IContactSettingPageHelper{
                 .insertNewContactGroupName(ValidValues.ContactSettingPageValue.NEW_CONTACT_GROUP_NAME)
                 .clickCreateNewContactGroupButtonAfterInsertName();
 
+        contactSettingPage.waitFiveSecond();
+
         return contactSettingPage;
     }
 

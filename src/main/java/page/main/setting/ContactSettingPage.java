@@ -13,8 +13,7 @@ public class ContactSettingPage extends BasePage{
     @FindBy(className = "js-setup-abook-create-group")
     private WebElement createNewGroupButton;
 
-//    @FindBy(xpath = "//span[contains(text(), 'Создать группу')]")
-    @FindBy(css = "div.b-popup__confirm > span._nb-button-text")
+    @FindBy(css = "button[data-dialog-action=\"dialog.submit\"]")
     private WebElement createNewGroupButtonAfterInsertName;
 
     @FindBy(className = "nb-input")

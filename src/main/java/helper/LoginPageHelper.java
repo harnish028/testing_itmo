@@ -9,8 +9,8 @@ import page.main.MainPage;
 
 public class LoginPageHelper implements ILoginPageHelper {
 
-    WebDriver webDriver;
-    LoginPage loginPage;
+    private WebDriver webDriver;
+    private LoginPage loginPage;
 
     public LoginPageHelper(WebDriver driver) {
         webDriver = driver;
@@ -24,6 +24,7 @@ public class LoginPageHelper implements ILoginPageHelper {
                 .clickSubmitButton();
 
         if (webDriver.getTitle().equals(ValidValues.WebDriverTitle.ERROR_AUTH_ON_LOGIN_PAGE)){
+
             return null;
         }
 

@@ -19,7 +19,7 @@ public class NewMessagePage extends BasePage{
     @FindBy(className = "mail-Bubbles")
     private WebElement addresseeField;
 
-    @FindBy(id = "nb-16")
+    @FindBy(css = "button[type=\"submit\"]")
     private WebElement sendMessageButton;
 
     public NewMessagePage(WebDriver webDriver) {
