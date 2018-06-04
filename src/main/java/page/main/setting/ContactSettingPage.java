@@ -16,6 +16,7 @@ public class ContactSettingPage extends BasePage{
     @FindBy(css = "button[data-dialog-action=\"dialog.submit\"]")
     private WebElement createNewGroupButtonAfterInsertName;
 
+
     @FindBy(className = "nb-input")
     private WebElement newContactGroupNameField;
 
